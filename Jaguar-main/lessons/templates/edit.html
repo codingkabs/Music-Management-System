@@ -1,0 +1,15 @@
+{% extends 'user_dashboard.html' %}
+{% block title %} {{ dashboard.heading }} {% endblock %}
+{% block dashboard_body %}
+<div class="container-fluid d-flex flex-column h-100 gap-3 p-0 m-0">
+	<form class="row align-items-center" action = "{{ request.path }}" method = "post">
+		{% csrf_token %}
+		{% include 'partials/form.html' with form=form %}
+
+		{% include 'partials/messages.html' %}
+		<div class="col-auto mb-3">
+			<input type="submit" value="Confirm" class = "btn btn-primary">
+		</div>
+	</form>
+</div>
+{% endblock %}

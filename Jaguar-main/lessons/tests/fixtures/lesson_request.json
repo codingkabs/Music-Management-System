@@ -1,0 +1,14 @@
+[
+  {
+    "model": "lessons.lessonrequest",
+    "pk": 1,
+    "fields": {
+      "no_of_lessons": 5,
+      "lesson_interval_in_days": 7,
+      "lesson_duration_in_mins": 30,
+      "further_information": "I would prefer teacher X.",
+      "user": 1,
+      "is_fulfilled": false
+    }
+  }
+]

@@ -1,0 +1,25 @@
+{% extends 'site_base.html' %}
+{% block title %}Home{% endblock %}
+{% block site_body %}
+{% load static %}
+<link rel="stylesheet" href = "static/css/homestyling.css">
+<div class="row">
+	<div class="col-lg-5 col-md-9 col-sm-12">
+		<div class="card" id="home-card">
+			<div class="card-body" id="home-card-body">
+				<h2 class="card-title">What we are</h2>
+				<h6 class="card-subtitle text-muted mb-3" id="home-text" >Jaguar_ is the music management system of the future. With us you are able to
+					book any session you desire, whether that's learning to play and instrament, preparation fo a performance,
+					or learning any music theory. With this simple to use app you can send us your availability, and book session when your
+					free. To help us, help you!</h6>
+					<a href="{% url 'log_in' %}" id="home-login">Log in</a>
+					<br>
+					<a href="{% url 'sign_up' %}" id="home-signup">Sign up</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-7 col-md-3 d-flex justify-content-around">
+			<img src="{% static 'images/Music Symbols.svg' %}" alt="A stream of sheet music." class = "img-fluid w-75 ml-auto" draggable="false">
+		</div>
+	</div>
+	{% endblock %}

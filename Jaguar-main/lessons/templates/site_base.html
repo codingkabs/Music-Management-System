@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<div class="container p-4">
+	<h1 class="display-10 mb-15" style ="
+	display: inline-block;
+	color: black;
+	font-family: 'Righteous', serif;
+	font-size: 100px;
+	text-shadow: .03em .03em 0 hsla(230,1%,100%,1);"><strong>Jaguar_</strong></h1>
+	<div class="mt-5">
+		{% block site_body %} {% endblock %}
+	</div>
+</div>
+{% endblock %}

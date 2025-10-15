@@ -1,0 +1,11 @@
+{% extends 'user_dashboard.html' %}
+{% block dashboard_body %}
+<form action = "{{ request.path }}" method = "post">
+	{% csrf_token %}
+	{% include 'partials/form.html' with form=form %}
+
+	{% include 'partials/messages.html' %}
+
+	<input type = "submit" value = "Request lesson" class = "btn btn-primary">
+</form>
+{% endblock %}

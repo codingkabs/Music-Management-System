@@ -1,0 +1,41 @@
+{% extends 'user_dashboard.html' %}
+{% block dashboard_body %}
+{% if request.path == '/student/lesson_requests' %}
+ {% if lesson is not None %}
+ <h2>Your Lesson Request: </h2>
+ <table class = "table">
+     <thead>
+         <tr>
+             <th>Available on Monday</th>
+             <th>Available on Tuesday</th>
+             <th>Available on Wednesday</th>
+             <th>Available on Thursday</th>
+             <th>Available on Friday</th>
+             <th>Number Of Lessons</th>
+             <th>Interval Between Lessons</th>
+             <th>Lesson duration in minutes</th>
+             <th>Additional Information</th>
+         </tr>
+     </thead>
+     <tbody>
+     <tr>
+         <td>{{lesson.is_available_on_monday}}</td>
+         <td>{{lesson.is_available_on_tuesday}}</td>
+         <td>{{lesson.is_available_on_wednesday}}</td>
+         <td>{{lesson.is_available_on_thursday}}</td>
+         <td>{{lesson.is_available_on_friday}}</td>
+         <td>{{lesson.no_of_lessons}}</td>
+         <td>{{lesson.lesson_interval_in_days}} days</td>
+         <td>{{lesson.lesson_duration_in_mins}} minutes</td>
+         <td>{{lesson.further_information}}</td>
+     </tr>
+     </tbody>
+ </table>
+ <a href = "{% url 'student/edit_lesson_request' lesson.id %}" class = "btn btn-primary">Edit Lesson Request</a>
+ <a href = "{% url 'student/delete_lesson_request' lesson.id %}" class = "btn btn-danger">Delete</a>
+ {% else %}
+ <h3>You dont have any lesson requests.</h3>
+ <a href = {%url 'lesson_request'%} class = "btn btn-primary">Make one here:</a>
+ {% endif %}
+ {% endif %}
+{% endblock %}

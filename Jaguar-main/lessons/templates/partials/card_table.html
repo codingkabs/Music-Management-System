@@ -1,0 +1,31 @@
+<div class="container-fluid row" style="flex:1;position:relative;">
+	<div style="overflow:auto;position:absolute;top:0;left:0;right:0;bottom:0;">
+		{% for card in cards %}
+			<div class="card p-3 mb-3">
+				<div class="row">
+					<div class="col">
+						<p><strong>{{ card.heading }}</strong></p>
+					</div>
+					<div class="col-auto">
+						<div class="row gap-3 m-1">
+							{% for button in card.buttons %}
+								<a class="btn btn-{{ button.type }} col" href="{{ button.url }}">{{ button.name }}</a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					{% for info in card.info %}
+					<div class="col-auto">
+						<p class="m-0">
+							{{ info.title }}
+							<br>
+							<span class="text-muted">{{ info.description }}</span>
+						</p>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

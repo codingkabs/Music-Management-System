@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="row h-100">
+  <div class="col-sm-3 h-100">
+    <div class="card h-100">
+      <div class="card-body d-flex flex-column h-100">
+				<h3 class="card-title">{{ user.first_name }} {{ user.last_name }}</h3>
+    		<h6 class="card-subtitle text-muted">{{ user.role }}</h6>
+				<hr>
+				<ul class="list-group mb-4">
+					{% if user.role == "Student" %}
+						<li class="list-group-item">
+							<a href = "{% url 'student/lesson-request' %}">
+								Make Lesson Request
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href = "{% url 'student/booked-lessons' %}">
+								Booked Lessons
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href = "{% url 'student/lesson-requests' %}">
+								Lesson Requests
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href = "{% url 'student/invoices' %}">
+								Invoices
+							</a>
+						</li>
+					{% elif user.role == "Administrator" %}
+						<li class="list-group-item">
+							<a href = "{% url 'administrator/lesson-requests' %}">
+								Lesson Requests
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href = "{% url 'administrator/student-balances' %}">
+								Student Balances
+							</a>
+						</li>
+					{% elif user.role == "Director" %}
+						<li class="list-group-item">
+							<a href = "{% url 'administrator/lesson-requests' %}">
+								Lesson Requests
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href = "{% url 'administrator/student-balances' %}">
+								Student Balances
+							</a>
+						</li>
+						<li class="list-group-item">
+							<a href = "{% url 'director/manage-administrators' %}">
+								Manage Administrators
+							</a>
+						</li>
+					{% endif %}
+				</ul>
+        <a href="{% url 'log_out' %}" class="btn btn-outline btn-outline-danger w-100 mt-auto">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-9 h-100">
+    <div class="card h-100">
+      <div class="card-body h-100 d-flex flex-column">
+        <h3 class="card-title">{{ dashboard.heading }}</h3>
+        <h6 class="card-subtitle text-muted">{{ dashboard.subheading }}</h6>
+				<hr>
+        {% block dashboard_body %} {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'user_dashboard.html' %}
+{% block title %} {{ dashboard.heading }} {% endblock %}
+{% block dashboard_body %}
+<div class="col-auto mb-3">
+	<a class="btn btn-outline-primary" href="{% url go_back_url %}">Go back to other lesson requests</a>
+</div>
+<h6>
+	Student:
+	<span class="text-muted">
+		{% with user=lesson_request.user %}
+			{{ user.first_name }} {{ user.last_name }} ({{ user.email }})
+		{% endwith %}
+	</span>
+</h6>
+<h6>
+	Number of Lessons:
+	<span class="text-muted">
+		{{ lesson_request.no_of_lessons }}
+	</span>
+</h6>
+<h6>
+	Lesson Duration:
+	<span class="text-muted">
+		{{ lesson_request.lesson_duration_in_mins }} minutes
+	</span>
+</h6>
+<h6>
+	Interval Between Lessons:
+	<span class="text-muted">
+		{{ lesson_request.lesson_interval_in_days }} days
+	</span>
+</h6>
+<h6>
+	Further Information:
+	<span class="text-muted">
+		{{ lesson_request.further_information }}
+	</span>
+</h6>
+<h6>
+	Available on Monday:
+	<span class="text-muted">
+		{% if lesson_request.is_available_on_monday %}
+			<i class="bi bi-check"></i>
+		{% else %}
+			<i class="bi bi-x"></i>
+		{% endif %}
+	</span>
+</h6>
+<h6>
+	Available on Tuesday:
+	<span class="text-muted">
+		{% if lesson_request.is_available_on_tuesday %}
+			<i class="bi bi-check"></i>
+		{% else %}
+			<i class="bi bi-x"></i>
+		{% endif %}
+	</span>
+</h6>
+<h6>
+	Available on Wednesday:
+	<span class="text-muted">
+		{% if lesson_request.is_available_on_wednesday %}
+			<i class="bi bi-check"></i>
+		{% else %}
+			<i class="bi bi-x"></i>
+		{% endif %}
+	</span>
+</h6>
+<h6>
+	Available on Thursday:
+	<span class="text-muted">
+		{% if lesson_request.is_available_on_thursday %}
+			<i class="bi bi-check"></i>
+		{% else %}
+			<i class="bi bi-x"></i>
+		{% endif %}
+	</span>
+</h6>
+<h6>
+	Available on Friday:
+	<span class="text-muted">
+		{% if lesson_request.is_available_on_friday %}
+			<i class="bi bi-check"></i>
+		{% else %}
+			<i class="bi bi-x"></i>
+		{% endif %}
+	</span>
+</h6>
+{% endblock %}

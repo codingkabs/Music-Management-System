@@ -1,0 +1,22 @@
+{% extends 'user_dashboard.html' %}
+{% block title %} {{ dashboard.heading }} {% endblock %}
+{% block dashboard_body %}
+<div class="row">
+	<div class="col-auto mb-3">
+		<a class="btn btn-outline-primary" href="{% url 'administrator/lesson-requests' %}">Go back to other lesson requests</a>
+	</div>
+	<div class="col-auto mb-3">
+		<a class="btn btn-outline-primary" href="{% url 'administrator/lesson-requests/book/finalise-booking' lesson_request.id %}">
+			Finalise booking
+		</a>
+	</div>
+	<div class="col-auto mb-3">
+		<a class="btn btn-outline-primary" href="{% url 'administrator/lesson-requests/book/lessons/create' lesson_request.id %}">
+			New lesson
+		</a>
+	</div>
+</div>
+<h6 class="mb-3">This request is for {{ lesson_request.no_of_lessons }} lessons with one every {{ lesson_request.lesson_interval_in_days }} days and each lasting {{ lesson_request.lesson_duration_in_mins }} minutes.</h6>
+<!-- Show table of cards where each card shows a lesson to be booked -->
+{% include 'partials/card_table.html' %}
+{% endblock %}

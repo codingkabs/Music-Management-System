@@ -1,0 +1,91 @@
+[
+  {
+    "model": "lessons.invoice",
+    "pk": 1,
+    "fields": {
+      "lesson_request": 15,
+      "user": 12
+    }
+  },
+  {
+    "model": "lessons.lessonrequest",
+    "pk": 14,
+    "fields": {
+      "is_available_on_monday": true,
+      "is_available_on_tuesday": true,
+      "is_available_on_wednesday": false,
+      "is_available_on_thursday": false,
+      "is_available_on_friday": true,
+      "no_of_lessons": 5,
+      "lesson_interval_in_days": 7,
+      "lesson_duration_in_mins": 45,
+      "further_information": "I have learning difficulties.",
+      "user": 12,
+      "is_fulfilled": false
+    }
+  },
+  {
+    "model": "lessons.lessonrequest",
+    "pk": 15,
+    "fields": {
+      "is_available_on_monday": false,
+      "is_available_on_tuesday": true,
+      "is_available_on_wednesday": true,
+      "is_available_on_thursday": true,
+      "is_available_on_friday": true,
+      "no_of_lessons": 4,
+      "lesson_interval_in_days": 14,
+      "lesson_duration_in_mins": 60,
+      "further_information": null,
+      "user": 12,
+      "is_fulfilled": true
+    }
+  },
+  {
+    "model": "lessons.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$FSocw4L5JlGQyHXf4VEQ3v$d4wHIBDQ8b1VkpGlIEkrT+a/H6hRM1lFN8Ybxwy6D+c=",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.org",
+      "role": "Student"
+    }
+  },
+  {
+    "model": "lessons.lesson",
+    "pk": 12,
+    "fields": {
+      "teacher": 1,
+      "datetime": "2023-05-02T13:00:00Z",
+      "duration": 45,
+      "further_information": "I want to learn piano.",
+      "user": 12,
+      "lesson_request": 15
+    }
+  },
+  {
+    "model": "lessons.lesson",
+    "pk": 13,
+    "fields": {
+      "teacher": 1,
+      "datetime": "2023-05-14T13:00:00Z",
+      "duration": 30,
+      "further_information": "I want to learn the flute.",
+      "user": 12,
+      "lesson_request": 15
+    }
+  },
+  {
+    "model": "lessons.lesson",
+    "pk": 14,
+    "fields": {
+      "teacher": 1,
+      "datetime": "2023-05-23T13:00:00Z",
+      "duration": 60,
+      "further_information": "I want to learn more piano.",
+      "user": 12,
+      "lesson_request": 15
+    }
+  }
+]

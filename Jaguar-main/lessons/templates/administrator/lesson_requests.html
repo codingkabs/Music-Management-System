@@ -1,0 +1,22 @@
+{% extends 'user_dashboard.html' %}
+{% block title %} {{ dashboard.heading }} {% endblock %}
+{% block dashboard_body %}
+<div class="container-fluid d-flex flex-column h-100 gap-3 p-0 m-0">
+	<form class="row align-items-center" action = "{{ request.path }}" method = "post">
+		{% csrf_token %}
+		{% load widget_tweaks %}
+		{% for field in form %}
+			<div class = "col-auto">
+					{{ field.label_tag }}
+					{% render_field field class="form-control form-select" %}
+			</div>
+		{% endfor %}
+		<div class="col-auto mt-auto">
+			<input type = "submit" value = "Apply filter" class = "btn btn-primary">
+		</div>
+	</form>
+
+	<!-- Show table of cards where each card shows information about a request -->
+	{% include 'partials/card_table.html' %}
+</div>
+{% endblock %}

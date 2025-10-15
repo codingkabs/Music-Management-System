@@ -2,11 +2,11 @@
 
 ## Team Members
 The members of the team are:
+- Kabir Suri (kabir.suri@kcl.ac.uk)
 - Aayush Dwivedi (aayush.dwivedi@kcl.ac.uk)
 - Ronen Roy (ronen.roy@kcl.ac.uk)
 - Oliver Singer (oliver.singer@kcl.ac.uk)
 - Tony Smith (tony.o.smith@kcl.ac.uk)
-- Kabir Suri (kabir.suri@kcl.ac.uk)
 
 ## Project Overview
 

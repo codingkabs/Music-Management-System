@@ -1,6 +1,6 @@
 # Music School Management System (MSMS)
 
-## Team Members
+## Team Members 5 Members
 The members of the team are:
 - Kabir Suri (kabir.suri@kcl.ac.uk)
 - Aayush Dwivedi (aayush.dwivedi@kcl.ac.uk)
